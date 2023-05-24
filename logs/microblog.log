@@ -1,0 +1,52 @@
+2023-05-22 16:11:51,021 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:52]
+2023-05-22 16:20:26,861 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:52]
+2023-05-23 20:40:57,948 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 20:46:29,783 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 20:46:31,970 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 21:18:45,728 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 21:30:52,498 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 21:31:00,426 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-23 21:31:06,558 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:74]
+2023-05-24 16:50:39,754 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:79]
+2023-05-24 16:54:25,288 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:79]
+2023-05-24 16:54:40,321 ERROR: Exception on /search [GET] [in e:\software\miniconda\envs\web\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "e:\software\miniconda\envs\web\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "E:\Coding\microblog\app\main\routes.py", line 157, in search
+    current_app.config['POSTS_PER_PAGE'])
+  File "E:\Coding\microblog\app\models.py", line 22, in search
+    ids, total = query_index(cls.__tablename__, expression, page, per_page)
+  File "E:\Coding\microblog\app\search.py", line 22, in query_index
+    'from': (page - 1) * per_page, 'size': per_page})
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\client\utils.py", line 347, in _wrapped
+    return func(*args, params=params, headers=headers, **kwargs)
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\client\__init__.py", line 1826, in search
+    body=body,
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\transport.py", line 466, in perform_request
+    raise e
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\transport.py", line 434, in perform_request
+    timeout=timeout,
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\connection\http_urllib3.py", line 291, in perform_request
+    self._raise_error(response.status, raw_data)
+  File "e:\software\miniconda\envs\web\lib\site-packages\elasticsearch\connection\base.py", line 329, in _raise_error
+    status_code, error_message, additional_info
+elasticsearch.exceptions.NotFoundError: NotFoundError(404, 'index_not_found_exception', 'no such index [post]', post, index_or_alias)
+2023-05-24 16:57:55,255 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:79]
+2023-05-24 16:59:33,382 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:79]
+2023-05-24 17:00:58,406 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:79]
+2023-05-24 17:03:49,759 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:80]
+2023-05-24 17:04:59,827 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:80]
+2023-05-24 17:06:07,302 INFO: Microblog startup [in E:\Coding\microblog\app\__init__.py:80]

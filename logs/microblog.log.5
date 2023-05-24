@@ -1,0 +1,136 @@
+2023-05-02 20:35:27,488 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:36:36,880 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:38:18,087 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:40:18,499 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:43:40,573 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:44:00,239 ERROR: Exception on /edit_profile [POST] [in c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\default.py", line 609, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: user.username
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "G:\Coding\microblog\app\routes.py", line 92, in edit_profile
+    db.session.commit()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\scoping.py", line 163, in do
+    return getattr(self.registry(), name)(*args, **kwargs)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 1046, in commit
+    self.transaction.commit()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 504, in commit
+    self._prepare_impl()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 483, in _prepare_impl
+    self.session.flush()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 2540, in flush
+    self._flush(objects)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 2682, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
+    with_traceback=exc_tb,
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\session.py", line 2642, in _flush
+    flush_context.execute()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 422, in execute
+    rec.execute(self)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 589, in execute
+    uow,
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\persistence.py", line 236, in save_obj
+    update,
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\orm\persistence.py", line 995, in _emit_update_statements
+    statement, multiparams
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1011, in execute
+    return meth(self, multiparams, params)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\sql\elements.py", line 298, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1130, in _execute_clauseelement
+    distilled_params,
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1317, in _execute_context
+    e, statement, parameters, cursor, context
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1511, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\util\compat.py", line 182, in raise_
+    raise exception
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\base.py", line 1277, in _execute_context
+    cursor, statement, parameters, context
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\sqlalchemy\engine\default.py", line 609, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
+[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
+[parameters: ('susan', 'slaves', 2)]
+(Background on this error at: http://sqlalche.me/e/13/gkpj)
+2023-05-02 20:44:32,204 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-02 20:45:15,267 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 16:30:59,991 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 16:31:47,942 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 16:32:00,419 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 16:40:16,248 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 16:40:22,060 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 18:52:50,541 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 18:59:23,855 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 18:59:43,797 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:00:34,910 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:05:00,656 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:06:36,652 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:08:58,245 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:14:47,250 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:33:59,109 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:34:07,988 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-04 19:34:58,718 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-05 18:56:02,905 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-05 18:56:30,338 ERROR: Exception on /explore [GET] [in c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py:1892]
+Traceback (most recent call last):
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\_compat.py", line 39, in reraise
+    raise value
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask_login\utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "G:\Coding\microblog\app\routes.py", line 146, in explore
+    return render_template('index.html', title='Explore', posts=posts)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\templating.py", line 140, in render_template
+    ctx.app,
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\flask\templating.py", line 120, in _render
+    rv = template.render(context)
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\jinja2\environment.py", line 1090, in render
+    self.environment.handle_exception()
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\jinja2\environment.py", line 832, in handle_exception
+    reraise(*rewrite_traceback_stack(source=source))
+  File "c:\users\ysc\.conda\envs\django\lib\site-packages\jinja2\_compat.py", line 28, in reraise
+    raise value.with_traceback(tb)
+  File "G:\Coding\microblog\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "G:\Coding\microblog\app\templates\base.html", line 31, in top-level template code
+    {% block content %}{% endblock %}
+  File "G:\Coding\microblog\app\templates\index.html", line 19, in block "content"
+    {% include '_post.html' %}
+  File "G:\Coding\microblog\app\templates\_post.html", line 3, in top-level template code
+    <td><img src="{{ post.author.avatar(36) }}"></td>
+jinja2.exceptions.UndefinedError: 'None' has no attribute 'avatar'
+2023-05-05 19:02:28,546 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
+2023-05-05 19:02:34,942 INFO: Microblog startup [in G:\Coding\microblog\app\__init__.py:44]
